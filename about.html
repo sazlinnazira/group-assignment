@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiwa Langkawi | About</title>
+
+  <!-- Core styles & fonts (same files you already linked) -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+   <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Jiwa Langkawi</div>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav id="nav-menu" class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="government.html">Government</a></li>
+        <li><a href="contact us.html">Contact us</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li class="dropdown">
+          <a href="#" id="toggle-discover">Discover <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu" id="discover-menu">
+            <li><a href="top attraction.html">Top Attraction</a></li>
+            <li><a href="food & cafe.html">Food & Cafe</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="travel tips.html">Travel Tips</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+ <section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="home/linnnn.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="hero-overlay">
+    <h1>About Langkawi</h1>
+    <p>Let's explore deeper</p>
+  </div>
+</section>
+
+
+  <!-- History -->
+  <section class="about-section" id="history">
+    <div class="container">
+      <h2>History & Legends</h2>
+      <p>
+        Langkawi’s recorded story stretches back more than a millennium,
+        but its most famous legend is that of <strong>Mahsuri</strong>, a
+        lovely maiden wrongly accused of adultery in the late 18<sup>th</sup>
+        century. With her dying breath she laid a seven‑generation curse on the
+        island; locals say it finally lifted in the 1980s—just before tourism
+        began to flourish. Today that tale lives on at <em>Makam Mahsuri</em>,
+        while prehistoric traces can be explored inside the
+        <em>UNESCO Global Geopark</em> that preserves 550‑million‑year‑old
+        limestone formations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Fun facts cards -->
+  <section class="facts facts-about">
+    <div class="fact-card">
+      <h3>99</h3>
+      <p>Islands at High Tide<br><small>(104 at low tide!)</small></p>
+    </div>
+    <div class="fact-card">
+      <h3>550 M yr</h3>
+      <p>Oldest Rocks in Malaysia</p>
+    </div>
+    <div class="fact-card">
+      <h3>Lang</h3>
+      <p>Means “Eagle” in Old Malay</p>
+    </div>
+    <div class="fact-card">
+      <h3>Kawi</h3>
+      <p>Means “Reddish‑Brown Stone”</p>
+    </div>
+  </section>
+
+  <!-- Culture -->
+  <section class="about-section alt" id="culture">
+    <div class="container">
+      <h2>Culture & Traditions</h2>
+      <ul class="culture-list">
+        <li><strong>Island Hospitality.</strong> Locals greet visitors with the warm <em>“Hai! Selamat Datang.”</em></li>
+        <li><strong>Traditional Rice Farming.</strong> Watch water buffalo plough terraces in
+            <em>Laman Padi</em> and learn how <em>beras</em> shaped village life.</li>
+        <li><strong>Arts & Crafts.</strong> Hand‑dyed <em>batik</em>, intricate <em>songket</em> weaving,
+            and coconut‑shell carving make perfect souvenirs.</li>
+        <li><strong>Festivals.</strong> From vibrant <em>Hari Raya Aidilfitri</em> open houses to the
+            Langkawi International Maritime & Aerospace (LIMA) show, the calendar is lively year‑round.</li>
+        <li><strong>Cuisine.</strong> Don’t leave without tasting <em>laksa ikan sekoq</em>,
+            charcoal‑grilled <em>ikan bakar</em>, and sea‑salted coconut ice cream.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jiwa Langkawi. All rights reserved.</p>
+  </footer>
+
+  <!-- Same JS you use on the homepage for responsive nav -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const discoverToggle = document.getElementById('toggle-discover');
+    const discoverMenu = document.getElementById('discover-menu');
+
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    discoverToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      discoverMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!discoverToggle.contains(e.target) && !discoverMenu.contains(e.target)) {
+        discoverMenu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

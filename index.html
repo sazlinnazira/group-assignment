@@ -1,0 +1,102 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiwa Langkawi | Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Jiwa Langkawi</div>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav id="nav-menu" class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="government.html">Government</a></li>
+        <li><a href="contact us.html">Contact us</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li class="dropdown">
+          <a href="#" id="toggle-discover">Discover <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu" id="discover-menu">
+            <li><a href="top attraction.html">Top Attraction</a></li>
+            <li><a href="food & cafe.html">Food & Cafe</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="travel tips.html">Travel Tips</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+ <section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="home/1.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="hero-overlay">
+    <h1>Jiwa Langkawi</h1>
+    <p>The Soul of the Island</p>
+    <a href="about.html" class="btn">Discover More</a>
+  </div>
+</section>
+
+
+  <!-- About Preview -->
+  <section class="about-preview">
+    <div class="container">
+      <h2>About Jiwa Langkawi</h2>
+      <p>Jiwa Langkawi is your guide to discovering Langkawi’s natural beauty, local soul, and thriving potential in tourism and investment.</p>
+      <a href="about.html" class="btn-outline">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Facts Section -->
+  <section class="facts">
+    <div class="fact-card">
+      <h3>3.8M</h3>
+      <p>Annual Visitors</p>
+    </div>
+    <div class="fact-card">
+      <h3>99</h3>
+      <p>Islands in Langkawi</p>
+    </div>
+    <div class="fact-card">
+      <h3>17</h3>
+      <p>Popular Beaches</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jiwa Langkawi. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const discoverToggle = document.getElementById('toggle-discover');
+    const discoverMenu = document.getElementById('discover-menu');
+
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    discoverToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      discoverMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!discoverToggle.contains(e.target) && !discoverMenu.contains(e.target)) {
+        discoverMenu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

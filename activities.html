@@ -1,0 +1,115 @@
+
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activities in Langkawi | Jiwa Langkawi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+ 
+  <header class="navbar">
+    <div class="logo">Jiwa Langkawi</div>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav id="nav-menu" class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="government.html">Government</a></li>
+        <li><a href="contact us.html">Contact us</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li class="dropdown">
+          <a href="#" id="toggle-discover">Discover <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu" id="discover-menu">
+            <li><a href="top attraction.html">Top Attraction</a></li>
+            <li><a href="food & cafe.html">Food & Cafe</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="travel tips.html">Travel Tips</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="activities/linnnn(4).mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+    <div class="hero-overlay">
+      <h1>Activities in Langkawi</h1>
+      <p>Uncover the adventure. Embrace the soul of the island.</p>
+    </div>
+  </section>
+
+  <!-- Activities List -->
+  <section class="activities-page">
+    <div class="container">
+      <h2>Top Activities in Langkawi</h2>
+      <div class="activity-grid">
+        <div class="activity-item">
+          <img src="activities/island.jpg" alt="Island Hopping">
+          <h3>Island Hopping</h3>
+          <p>Visit iconic islands like Dayang Bunting and Beras Basah, famous for stunning views and serene waters.</p>
+        </div>
+        <div class="activity-item">
+          <img src="activities/cable car.jpg" alt="Langkawi Cable Car">
+          <h3>SkyCab & SkyBridge</h3>
+          <p>Ride the Langkawi cable car and experience breathtaking views from the top of Gunung Mat Cincang.</p>
+        </div>
+        <div class="activity-item">
+          <img src="activities/mangrove.jpg" alt="Mangrove Tour">
+          <h3>Mangrove Tour</h3>
+          <p>Explore the rich ecosystem of Kilim Geoforest Park by boat through ancient mangrove rivers.</p>
+        </div>
+        <div class="activity-item">
+          <img src="activities/snorkeling.jpg" alt="Snorkeling">
+          <h3>Snorkeling & Diving</h3>
+          <p>Discover the colourful marine life at Pulau Payar Marine Park with clear turquoise waters.</p>
+        </div>
+        <div class="activity-item">
+          <img src="activities/night market.jpg" alt="Night Market">
+          <h3>Night Market</h3>
+          <p>Shop like a local at the pasar malam and enjoy a variety of street food and handmade crafts.</p>
+        </div>
+        <div class="activity-item">
+          <img src="activities/air terjun.jpg" alt="Waterfall Hiking">
+          <h3>Waterfall Hiking</h3>
+          <p>Relax and explore the natural beauty of Langkawi’s famous waterfalls like Telaga Tujuh and Durian Perangin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jiwa Langkawi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const discoverToggle = document.getElementById('toggle-discover');
+    const discoverMenu = document.getElementById('discover-menu');
+
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    discoverToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      discoverMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!discoverToggle.contains(e.target) && !discoverMenu.contains(e.target)) {
+        discoverMenu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

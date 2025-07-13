@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiwa Langkawi | Top Attraction</title>
+
+  <!-- Core styles & fonts (same links you already use) -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Jiwa Langkawi</div>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav id="nav-menu" class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="government.html">Government</a></li>
+        <li><a href="contact us.html">Contact us</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li class="dropdown">
+          <a href="#" id="toggle-discover">Discover <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu" id="discover-menu">
+            <li><a href="top attraction.html">Top Attraction</a></li>
+            <li><a href="food & cafe.html">Food & Cafe</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="travel tips.html">Travel Tips</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+ <section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="topattraction/linnnn(3).mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="hero-overlay">
+      <h1>Top Attractions</h1>
+      <p>The must‑visit gems of Langkawi Island</p>
+    </div>
+  </section>
+
+  <!-- Grid of attractions -->
+  <section class="attractions-grid">
+    <!-- Card 1 -->
+    <article class="attraction-card">
+      <img src="topattraction/pantai-cenang.jpg" alt="Pantai Cenang">
+      <div class="card-body">
+        <h3>Pantai Cenang</h3>
+        <p>Soft white sand, stunning sunsets and a lively strip of cafés & beach bars – the island’s most famous shoreline.</p>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="attraction-card">
+      <img src="topattraction/pantai-beras-basah.jpg" alt="Pantai Beras Basah">
+      <div class="card-body">
+        <h3>Pantai Beras Basah <span class="tag">Island Hopping</span></h3>
+        <p>Turquoise water, swaying palms and quiet vibes on a postcard‑perfect islet reached by boat tours.</p>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="attraction-card">
+      <img src="topattraction/tasik-dayang-bunting.jpg" alt="Tasik Dayang Bunting">
+      <div class="card-body">
+        <h3>Tasik Dayang Bunting</h3>
+        <p>An emerald lake cradled by jungle‑clad hills. Kayak, swim or just soak in the legend of the Pregnant Maiden.</p>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="attraction-card">
+      <img src="topattraction/cable-car.jpg" alt="Langkawi Cable Car">
+      <div class="card-body">
+        <h3>Langkawi Cable Car & Sky Bridge</h3>
+        <p>Ride one of the world’s steepest gondolas to panoramic peaks, then walk the iconic curved bridge in the clouds.</p>
+      </div>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="attraction-card">
+      <img src="topattraction/kilim-geopark.jpg" alt="Kilim Geopark">
+      <div class="card-body">
+        <h3>Kilim Geopark Mangrove Tour</h3>
+        <p>Boat through UNESCO‑listed mangroves, limestone caves and eagle habitats in a 550‑million‑year‑old landscape.</p>
+      </div>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="attraction-card">
+      <img src="topattraction/pulau-payar.jpg" alt="Pulau Payar Snorkelling">
+      <div class="card-body">
+        <h3>Pulau Payar Marine Park</h3>
+        <p>Crystal‑clear snorkelling with rainbow reefs and friendly reef fish – ideal for first‑timers & seasoned divers.</p>
+      </div>
+    </article>
+
+    <!-- Card 7 -->
+    <article class="attraction-card">
+      <img src="topattraction/maha-tower.jpg" alt="Maha Tower Langkawi">
+      <div class="card-body">
+        <h3>Maha Tower Langkawi</h3>
+        <p>Soar to a 360° observation deck in Langkawi’s newest landmark. Magical night lights over Kuah Harbour.</p>
+      </div>
+    </article>
+
+    <!-- Card 8 -->
+    <article class="attraction-card">
+      <img src="topattraction/splash-out.jpg" alt="Splash Out Water Park">
+      <div class="card-body">
+        <h3>Splash Out Water Park</h3>
+        <p>Wave pools, mega slides and ocean‑explorer theming – perfect for a fun‑filled, family‑friendly cool‑down.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jiwa Langkawi. All rights reserved.</p>
+  </footer>
+
+  <!-- Responsive‑nav JS (same as other pages) -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const discoverToggle = document.getElementById('toggle-discover');
+    const discoverMenu = document.getElementById('discover-menu');
+
+    toggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+    discoverToggle.addEventListener('click', e => {
+      e.preventDefault();
+      discoverMenu.classList.toggle('active');
+    });
+    document.addEventListener('click', e => {
+      if (!discoverToggle.contains(e.target) && !discoverMenu.contains(e.target)) {
+        discoverMenu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
+

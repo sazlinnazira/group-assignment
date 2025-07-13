@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiwa Langkawi | Transportation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+</head>
+
+<body class="transport-map">
+
+  <html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jiwa Langkawi | Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
+      rel="stylesheet" />
+  </head>
+
+  <body class="transport-map">
+
+
+    <header class="navbar">
+      <div class="logo">Jiwa Langkawi</div>
+      <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+      <nav id="nav-menu" class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="government.html">Government</a></li>
+          <li><a href="contact us.html">Contact us</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li class="dropdown">
+            <a href="#" id="toggle-discover">Discover <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu" id="discover-menu">
+              <li><a href="top attraction.html">Top Attraction</a></li>
+              <li><a href="food & cafe.html">Food & Cafe</a></li>
+              <li><a href="transportation.html">Transportation</a></li>
+              <li><a href="travel tips.html">Travel Tips</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero-video">
+      <video autoplay muted loop playsinline>
+        <source src="food&cafe/linnnn(10).mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+      <div class="hero-overlay">
+        <h1>🚏 Interactive Map of Langkawi</h1>
+        <p>Click on each location to explore transportation options.</p>
+      </div>
+    </section>
+    <div id="map" class="map-container"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const map = L.map('map').setView([6.33, 99.85], 11); // Langkawi center
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        const locations = [
+          {
+            name: "Langkawi International Airport",
+            coords: [6.3405, 99.7308],
+            info: "Main airport with direct flights from KL, Penang, Singapore."
+          },
+          {
+            name: "Kuah Jetty Terminal",
+            coords: [6.3196, 99.8498],
+            info: "Main ferry terminal connecting Langkawi with mainland Malaysia."
+          },
+          {
+            name: "Pantai Cenang Car Rental",
+            coords: [6.2958, 99.7296],
+            info: "Most car and motorbike rental services located here."
+          },
+          {
+            name: "Grab & Taxi Hotspot",
+            coords: [6.3123, 99.8499],
+            info: "Grab pickup zones are available near shopping areas and hotels."
+          }
+        ];
+
+        locations.forEach(loc => {
+          L.marker(loc.coords)
+            .addTo(map)
+            .bindPopup(`<b>${loc.name}</b><br>${loc.info}`);
+        });
+      });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Jiwa Langkawi. All rights reserved.</p>
+    </footer>
+
+    <!-- Same JS you use on the homepage for responsive nav -->
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      const discoverToggle = document.getElementById('toggle-discover');
+      const discoverMenu = document.getElementById('discover-menu');
+
+      toggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      discoverToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        discoverMenu.classList.toggle('active');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!discoverToggle.contains(e.target) && !discoverMenu.contains(e.target)) {
+          discoverMenu.classList.remove('active');
+        }
+      });
+    </script>
+
+  </body>
+
+  </html>

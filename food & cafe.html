@@ -1,0 +1,100 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activities in Langkawi | Jiwa Langkawi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+ 
+  <header class="navbar">
+    <div class="logo">Jiwa Langkawi</div>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav id="nav-menu" class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="government.html">Government</a></li>
+        <li><a href="contact us.html">Contact us</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li class="dropdown">
+          <a href="#" id="toggle-discover">Discover <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu" id="discover-menu">
+            <li><a href="top attraction.html">Top Attraction</a></li>
+            <li><a href="food & cafe.html">Food & Cafe</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="travel tips.html">Travel Tips</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="food&cafe/food.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="hero-overlay">
+      <h1>Food&Cafe</h1>
+      <p>Discover the cutest cafés & delicious food places across the island.</p>
+    </div>
+  </section>
+  
+<section class="food-cards-container">
+  <div class="food-card">
+    <img src="food&cafe/Ngopi.jpg" alt="ngopi-at-beach" />
+    <h3>Ngopi-at-Beach</h3>
+    <p>Famous for handmade cookies and pastel-themed café interior.</p>
+  </div>
+
+  <div class="food-card">
+    <img src="food&cafe/mat.jpg" alt="Nasi Campur Tok Mat" />
+    <h3>Nasi Campur Tok Mat</h3>
+    <p>Authentic local taste with more than 30 dishes daily. Halal.</p>
+  </div>
+
+  <div class="food-card">
+    <img src="food&cafe/zone.jpg" alt="The Coffee Zone" />
+    <h3>The Coffee Zone</h3>
+    <p>Chill spot with iced latte, aesthetic mural and work-friendly wifi.</p>
+  </div>
+
+  <div class="food-card">
+    <img src="food&cafe/kelapa.jpg" alt="Pantai Coconut Shake" />
+    <h3>Pantai Coconut Shake</h3>
+    <p>Fresh, cold coconut shake with a view of the beach.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Jiwa Langkawi. All rights reserved.</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const discoverToggle = document.getElementById('toggle-discover');
+  const discoverMenu = document.getElementById('discover-menu');
+
+  toggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+  discoverToggle.addEventListener('click', e => {
+    e.preventDefault();
+    discoverMenu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', e => {
+    if (!discoverToggle.contains(e.target) && !discoverMenu.contains(e.target)) {
+      discoverMenu.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+ 

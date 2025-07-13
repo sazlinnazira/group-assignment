@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Government | Jiwa Langkawi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Jiwa Langkawi</div>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav id="nav-menu" class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="government.html">Government</a></li>
+        <li><a href="contact us.html">Contact us</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li class="dropdown">
+          <a href="#" id="toggle-discover">Discover <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu" id="discover-menu">
+            <li><a href="top attraction.html">Top Attraction</a></li>
+            <li><a href="food & cafe.html">Food & Cafe</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="travel tips.html">Travel Tips</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="goverment/linnnn(2).mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="hero-overlay">
+    <h1>Langkawi Government</h1>
+    <p>Governance & Vision for a Sustainable Island</p>
+  </div>
+</section>
+
+
+  <!-- Government Overview -->
+  <section class="gov-content">
+    <div class="container">
+      <h2>Leadership and Development</h2>
+      <p>
+        The Langkawi Development Authority (LADA) plays a vital role in administering the island's tourism, infrastructure,
+        and economic growth in line with Malaysia’s Vision 2030.
+      </p>
+
+      <h3>Departments</h3>
+      <ul class="departments">
+        <li><strong>LADA:</strong> Planning, tourism, and investment</li>
+        <li><strong>Municipal Council:</strong> Waste, roads, and public health</li>
+        <li><strong>Environmental Unit:</strong> Sustainability and conservation</li>
+        <li><strong>Community Relations:</strong> Engagement and outreach</li>
+      </ul>
+
+      <h3>Vision</h3>
+      <p>
+        Langkawi aims to become a smart and green island with world-class services by the year 2030,
+        emphasizing eco-tourism and digital innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Government Cards with Learn More -->
+  <section class="gov-section">
+    <div class="gov-card">
+      <img src="goverment/municipal.jpg" alt="Langkawi Office">
+      <h2>Langkawi Municipal Council</h2>
+      <p>The administrative authority overseeing development, cleanliness, and local services in Langkawi.</p>
+    </div>
+
+    <div class="gov-card">
+      <img src="goverment/ceolada.jpeg" alt="CEO of LADA">
+      <h2>YBhg. Dato’ Haslina binti Abdul Hamid</h2>
+      <p>As CEO of Langkawi Development Authority (LADA), she leads strategic initiatives for sustainable tourism, environmental conservation, and island‑wide growth.</p>
+    </div>
+
+    <div class="gov-card">
+      <img src="goverment/gov-structure.jpeg" alt="Island Governance">
+      <h2>Island Governance Structure</h2>
+      <p>Understand how Langkawi is managed through a collaborative network of public authorities and development units.</p>
+      <a href="#" id="learnMoreBtn" class="btn-outline">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Learn More Modal -->
+  <div id="learnMoreModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Langkawi Governance & Vision</h2>
+      <p>
+        Langkawi is governed through collaboration among agencies like LADA, the Municipal Council,
+        and the Environmental Unit. They guide the island toward sustainability, eco-tourism, and innovation.
+      </p>
+      <ul>
+        <li><strong>LADA:</strong> Economic and tourism development</li>
+        <li><strong>Municipal Council:</strong> Public services, waste, roads</li>
+        <li><strong>Community Unit:</strong> Local outreach and engagement</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jiwa Langkawi. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Navbar toggle
+    const toggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Dropdown toggle
+    const discoverToggle = document.getElementById('toggle-discover');
+    const discoverMenu = document.getElementById('discover-menu');
+    discoverToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      discoverMenu.classList.toggle('active');
+    });
+    document.addEventListener('click', function (e) {
+      if (!discoverToggle.contains(e.target) && !discoverMenu.contains(e.target)) {
+        discoverMenu.classList.remove('active');
+      }
+    });
+
+    // Modal popup
+    const modal = document.getElementById("learnMoreModal");
+    const btn = document.getElementById("learnMoreBtn");
+    const span = document.getElementById("closeModal");
+
+    btn.onclick = function(e) {
+      e.preventDefault();
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

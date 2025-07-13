@@ -1,0 +1,134 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiwa Langkawi | Contact</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+ 
+  <header class="navbar">
+    <div class="logo">Jiwa Langkawi</div>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav id="nav-menu" class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="government.html">Government</a></li>
+        <li><a href="contact us.html">Contact us</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li class="dropdown">
+          <a href="#" id="toggle-discover">Discover <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu" id="discover-menu">
+            <li><a href="top attraction.html">Top Attraction</a></li>
+            <li><a href="food & cafe.html">Food & Cafe</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="travel tips.html">Travel Tips</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="gallery/linnnn(6).mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="hero-overlay">
+      <h1>Langkawi Gallery</h1>
+      <p>Experience the beauty of Langkawi through our photo collection.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-grid">
+    <div class="gallery-item">
+      <img src="gallery/perhentian langkawi.jpg" alt="Langkawi Beach" onclick="openImage(this)" />
+    </div>
+    <div class="gallery-item">
+      <img src="gallery/eagle.jpg" alt="Eagle Square" onclick="openImage(this)" />
+    </div>
+    <div class="gallery-item">
+      <img src="gallery/sky.jpg" alt="Sky Bridge" onclick="openImage(this)" />
+    </div>
+    <div class="gallery-item">
+      <img src="gallery/4.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+       <div class="gallery-item">
+      <img src="gallery/1.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+       <div class="gallery-item">
+      <img src="gallery/2.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+       <div class="gallery-item">
+      <img src="gallery/3.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+       <div class="gallery-item">
+      <img src="gallery/5.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+       <div class="gallery-item">
+      <img src="gallery/square.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+       <div class="gallery-item">
+      <img src="gallery/chenang.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+       <div class="gallery-item">
+      <img src="gallery/6.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+       <div class="gallery-item">
+      <img src="gallery/7.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+   <div class="gallery-item">
+      <img src="gallery/9.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+  <div class="gallery-item">
+      <img src="gallery/8.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+  <div class="gallery-item">
+      <img src="gallery/10.jpg" alt="Mangrove Tour" onclick="openImage(this)" />
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-btn" onclick="closeImage()">&times;</span>
+    <div class="modal-content" style="text-align: center;">
+      <img id="modalImg" class="modal-img" src="" alt="Zoomed Gallery Image" />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Visit Langkawi. All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    function openImage(img) {
+      document.getElementById("modalImg").src = img.src;
+      document.getElementById("imageModal").style.display = "block";
+    }
+
+    function closeImage() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    window.onclick = function (e) {
+      if (e.target === document.getElementById("imageModal")) {
+        closeImage();
+      }
+    };
+  </script>
+
+</body>
+</html>
